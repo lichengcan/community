@@ -8,7 +8,10 @@ import com.example.community.mapper.StudentsMapper;
 import com.example.community.service.StudentsService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * @author: lichengcan
@@ -21,6 +24,9 @@ public class StudentsController {
 
     @Autowired
     StudentsService studentsService;
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 
     @PostMapping("/test")
     public void test(@RequestBody Students students) {
@@ -36,5 +42,29 @@ public class StudentsController {
         IPage<Students> userIPage = studentsService.selectPage(page, new QueryWrapper<Students>()
                 .eq("name", "name_a2frd"));
         return userIPage;
+    }
+
+    /**
+     * 创建集合
+     */
+    @PostMapping("createCollection")
+    public void createCollection(String collectName) {
+        if (!mongoTemplate.collectionExists(collectName)) {
+            mongoTemplate.createCollection(collectName);
+        } else {
+            System.out.println("集合已存在;");
+        }
+    }
+
+    /**
+     * 文档的添加
+     */
+    @PostMapping("addDocument")
+    public void addDocument() {
+        Students user = new Students(123,"xiao",13,"123442131",2);
+        //_id存在时会把旧数据进行覆盖；
+        mongoTemplate.save(user);
+//        _id存在时会提示主键重复的异常；
+//        mongoTemplate.insert(user);
     }
 }

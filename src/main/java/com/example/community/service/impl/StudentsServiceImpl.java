@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.community.model.entity.Students;
 import com.example.community.mapper.StudentsMapper;
 import com.example.community.service.StudentsService;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,10 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     @Override
     public void insert(Students students) {
         studentsMapper.insert(students);
+    }
+
+    @Override
+    public void deviceFlowTransSave(ConsumerRecord record) {
+        System.out.println("消费成功record = " + record);
     }
 }
