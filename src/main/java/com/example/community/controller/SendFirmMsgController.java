@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author lichengcan
- */
+ * @author: lichengcan
+ * @date: 2023-07-04 17:26
+ * @description rabbitmq 生产者
+ **/
 @Slf4j
 @RestController
 @RequestMapping("/firm")
