@@ -29,19 +29,25 @@ public class MsgController {
     @RabbitHandler
     public void consumrmsg2(String msg){
         log.info(" -------------->" + msg);
-
     }
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "queue3",autoDelete = "false"),exchange = @Exchange(value = "exchange_firm",type = ExchangeTypes.TOPIC)))
     @RabbitHandler
     public void consumrmsg3(String msg){
         log.info(" -------------->" + msg);
-
     }
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "queue4",autoDelete = "false"),exchange = @Exchange(value = "exchange_firm",type = ExchangeTypes.TOPIC)))
     @RabbitHandler
     public void consumrmsg4(String msg){
         log.info(" -------------->" + msg);
+    }
+
+
+    /**
+     * 手动消费
+     */
+    public void consumrmsg6(String msg){
+
     }
 }

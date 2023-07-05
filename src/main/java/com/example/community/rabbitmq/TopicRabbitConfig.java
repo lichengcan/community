@@ -43,6 +43,11 @@ public class TopicRabbitConfig {
         return new Queue ("queue4",true);
     }
 
+    @Bean
+    public Queue FiveQueue() {
+        return new Queue ("queue5",true);
+    }
+
     /**
      * 给交换机取名
      * @return
@@ -52,23 +57,28 @@ public class TopicRabbitConfig {
         return new TopicExchange("exchange_firm",true,false);
     }
 
+    /**
+     * 绑定键可以使用通配符 * 和 # 进行模糊匹配，其中 * 匹配一个词，# 匹配零个或多个词
+     * @return
+     */
     @Bean
     public Binding bindingTopic1(){
-        return BindingBuilder.bind(firstQueue()).to(topicExchange()).with("*.吴京");
+        return BindingBuilder.bind(firstQueue()).to(topicExchange()).with("*.小灿");
     }
 
     @Bean
     public Binding bindingTopic2(){
-        return BindingBuilder.bind(SecondQueue()).to(topicExchange()).with("爱国.吴京");
+        return BindingBuilder.bind(SecondQueue()).to(topicExchange()).with("哈哈.小峰");
     }
 
     @Bean
     public Binding bindingTopic3(){
-        return BindingBuilder.bind(ThreeQueue()).to(topicExchange()).with("爱国.*");
+        return BindingBuilder.bind(ThreeQueue()).to(topicExchange()).with("动作.小花");
     }
     @Bean
     public Binding bindingTopic4(){
-        return BindingBuilder.bind(FourQueue()).to(topicExchange()).with("#.沈腾");
+        return BindingBuilder.bind(FourQueue()).to(topicExchange()).with("#.小艹");
     }
+
 }
 
