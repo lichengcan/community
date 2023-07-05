@@ -1,8 +1,6 @@
 server:
   port: 8080
 spring:
-  main:
-    web-application-type: reactive
   application:
     name: community
   datasource:
@@ -14,3 +12,12 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost/testdb
+# mybatis-plus 配置 注意还有一个config配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    use-generated-keys: true
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  type-aliases-package: com.example.community.model.entity
