@@ -61,7 +61,7 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.3</version>
         </dependency>
-<!--        整合redis-->
+        <!--        整合redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -71,7 +71,16 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
-
+        <!--整合kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.11</version>
+        </dependency>
 
     </dependencies>
 
