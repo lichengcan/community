@@ -2,8 +2,10 @@ package com.example.community;
 
 import com.example.community.model.entity.User;
 import org.junit.jupiter.api.Test;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -12,6 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+
 
 @SpringBootTest
 class MongDbApplicationTests {
