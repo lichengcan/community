@@ -32,11 +32,12 @@ public class SendFirmMsgController {
     @PostMapping("/send")
     public void sendMsg(){
 
+        //发送信息到指定的交换器
+        //并使用路由键进行匹配
         for (int i = 1; i <=50; i++) {
-            // @params1: 交换机exchange
-            // @params2: 队列名称/routing
-            // @params3: 属性配置
-            // @params4: 发送消息的内容
+            // @params1: 交换机名称
+            // @params2: 表示消息的路由键
+            // @params3: 表示要发送的消息内容
             if(i%4==0){
                 rabbitTemplate.convertAndSend(exchangeName,routeKey1,("爱国.小灿，说第"+i+"遍。").getBytes());
             }else if(i%4 ==1){

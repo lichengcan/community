@@ -33,8 +33,8 @@ public class MsgController {
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "queue3",autoDelete = "false"),exchange = @Exchange(value = "exchange_firm",type = ExchangeTypes.TOPIC)))
     @RabbitHandler
-    public void consumrmsg3(String msg){
-        log.info(" -------------->" + msg);
+    public void consumrmsg3(String msg,String id){
+        log.info(" -------------->" + msg+"------------"+id);
     }
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "queue4",autoDelete = "false"),exchange = @Exchange(value = "exchange_firm",type = ExchangeTypes.TOPIC)))

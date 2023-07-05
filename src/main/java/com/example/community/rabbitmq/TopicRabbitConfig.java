@@ -43,10 +43,6 @@ public class TopicRabbitConfig {
         return new Queue ("queue4",true);
     }
 
-    @Bean
-    public Queue FiveQueue() {
-        return new Queue ("queue5",true);
-    }
 
     /**
      * 给交换机取名
