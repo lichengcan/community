@@ -24,10 +24,10 @@ public class SendFirmMsgController {
      */
     private String exchangeName = "exchange_firm";
     // 2、定义路由key
-    private String routeKey1 = "爱国.吴京";
-    private String routeKey2 = "爱国.沈腾";
-    private String routeKey3 = "动作.吴京";
-    private String routeKey4 = "喜剧.沈腾";
+    private String routeKey1 = "小灿";
+    private String routeKey2 = "小猫";
+    private String routeKey3 = "小狗";
+    private String routeKey4 = "小猪";
 
     @PostMapping("/send")
     public void sendMsg(){
@@ -38,13 +38,13 @@ public class SendFirmMsgController {
             // @params3: 属性配置
             // @params4: 发送消息的内容
             if(i%4==0){
-                rabbitTemplate.convertAndSend(exchangeName,routeKey1,("爱国.吴京，说第"+i+"遍。").getBytes());
+                rabbitTemplate.convertAndSend(exchangeName,routeKey1,("小灿"+i+"号。").getBytes());
             }else if(i%4 ==1){
-                rabbitTemplate.convertAndSend(exchangeName,routeKey2,("爱国.沈腾，说第"+i+"遍。").getBytes());
+                rabbitTemplate.convertAndSend(exchangeName,routeKey2,("小猫，"+i+"号。").getBytes());
             }else if(i%4 ==2){
-                rabbitTemplate.convertAndSend(exchangeName,routeKey3,("动作.吴京，说第"+i+"遍。").getBytes());
+                rabbitTemplate.convertAndSend(exchangeName,routeKey3,("小狗"+i+"号。").getBytes());
             }else if(i%4 ==3){
-                rabbitTemplate.convertAndSend(exchangeName,routeKey4,("喜剧.沈腾，说第"+i+"遍。").getBytes());
+                rabbitTemplate.convertAndSend(exchangeName,routeKey4,("小猪，"+i+"号。").getBytes());
             }
             log.info("发送第"+i);
         }
