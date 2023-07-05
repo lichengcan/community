@@ -61,7 +61,13 @@ mybatis-plus:
       ack-mode: MANUAL_IMMEDIATE
       concurrency: 1  #推荐设置为topic的分区数
       type: BATCH #开启批量监听
-
+# 配置rabbitmq服务
+  rabbitmq:
+    username: guest
+    password: guest
+    virtual-host: test
+    host: localhost
+    port: 5672
 #消费topic配置
 xiaocan:
   analyze:

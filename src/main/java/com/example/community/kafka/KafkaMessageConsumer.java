@@ -16,7 +16,7 @@ public class KafkaMessageConsumer {
      * kafka的信息消费
      * @param record
      */
-    @KafkaListener(topics = "${xiaocan.analyze.device.flow.topic.consumer}", groupId = "dc-device-flow-analyze-0228")
+//    @KafkaListener(topics = "${xiaocan.analyze.device.flow.topic.consumer}", groupId = "dc-device-flow-analyze-0228")
     public void consumeMessage(ConsumerRecord<String, String> record) {
         String key = record.key();
         String value = record.value();
