@@ -40,6 +40,7 @@
             <artifactId>druid</artifactId>
             <version>1.2.14</version>
         </dependency>
+        <!--        mongodb-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
