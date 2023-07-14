@@ -1,4 +1,4 @@
-package com.example.community.design;
+package com.example.community.simpledesign;
 
 /**
  * @author: lichengcan
