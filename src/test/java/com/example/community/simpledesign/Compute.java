@@ -6,6 +6,15 @@ package com.example.community.simpledesign;
  * @description 测试
  **/
 public class Compute {
+    //简单的计算器
+
+    //面向对象的特性
+
+    //封装：将运算符 和 计算数据封装成对象
+    //继承：运算类继承 运算符类
+    //多态：一个类有不同的实现
+    //简单工厂模式： 根据不同的情况 + - * / 来实例化
+
     public static void main(String[] args) {
         final Operation operate = OperationFactory.createOperate("-");
         operate.set_numberA(10);
