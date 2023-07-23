@@ -111,11 +111,7 @@
             <artifactId>httpcore5</artifactId>
             <version>5.2.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.tencent.saas</groupId>
-            <artifactId>saas-sdk-java</artifactId>
-            <version>1.0.4</version>
-        </dependency>
+
 
     </dependencies>
 
