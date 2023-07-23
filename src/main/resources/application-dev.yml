@@ -75,3 +75,9 @@ xiaocan:
       flow:
         topic:
           consumer: test
+saas:
+  open-api:
+    url: https://test-open.tanbse.tencent.com:443
+    algorithm: TC3-HMAC-SHA256
+    secret-key: bt04w30vbnrvdopykclvl2ijq7j3ps2vb
+    secret-id: 402883028953bcfc018962634d160000
