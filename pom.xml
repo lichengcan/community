@@ -87,6 +87,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
+
         <!-- jaxb依赖包 -->
         <dependency>
             <groupId>javax.xml.bind</groupId>

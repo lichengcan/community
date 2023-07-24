@@ -1,4 +1,4 @@
-package com.example.community;
+package com.example.community.mongDB;
 
 import com.example.community.model.entity.User;
 import org.junit.jupiter.api.Test;
