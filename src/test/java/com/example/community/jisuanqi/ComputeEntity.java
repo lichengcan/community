@@ -13,7 +13,7 @@ public class ComputeEntity {
     Double d1;
     Double d2;
 
-    public Double getResult(){
+    public Double getResult(ComputeEntity computeEntity){
         Double result = 0D;
         return result;
     }
