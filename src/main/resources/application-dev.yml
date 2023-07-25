@@ -36,7 +36,7 @@ mybatis-plus:
   #kafka配置
   kafka:
     bootstrap-servers: localhost:9092
-    client-id: dc-device-flow-analyze
+    client-id: dc-device-flow-analyze·
     consumer:
       group-id: dc-device-flow-analyze-0228
       max-poll-records: 10
@@ -75,9 +75,3 @@ xiaocan:
       flow:
         topic:
           consumer: test
-saas:
-  open-api:
-    url: https://test-open.tanbse.tencent.com:443
-    algorithm: TC3-HMAC-SHA256
-    secret-key: bt04w30vbnrvdopykclvl2ijq7j3ps2vb
-    secret-id: 402883028953bcfc018962634d160000
