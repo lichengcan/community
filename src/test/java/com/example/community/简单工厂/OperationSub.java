@@ -1,0 +1,15 @@
+package com.example.community.简单工厂;
+
+/**
+ * @author: lichengcan
+ * @date: 2023-07-14 17:32
+ * @description 减法计算类
+ **/
+public class OperationSub extends Operation{
+    @Override
+    public double getResult(){
+        double result = 0;
+        result = get_numberA()-get_numberB();
+        return result;
+    }
+}
