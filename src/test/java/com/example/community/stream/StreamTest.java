@@ -1,6 +1,5 @@
 package com.example.community.stream;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -17,12 +16,12 @@ import static java.lang.Thread.sleep;
  * @description stream 流练习
  **/
 @SpringBootTest
-public class streamTest {
+public class StreamTest {
     //数据库联表查询
     //一对多的关系，某些id可能会重复
     //重复的id数据留下一条create_time最新的一个
     public static void main(String[] args) throws InterruptedException {
-        streamTest streamTest = new streamTest();
+        StreamTest streamTest = new StreamTest();
         streamTest.groupBy();
     }
 
