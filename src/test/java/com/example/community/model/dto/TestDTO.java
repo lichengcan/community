@@ -1,4 +1,4 @@
-package com.example.community.stream;
+package com.example.community.model.dto;
 
 import lombok.Data;
 
@@ -13,6 +13,5 @@ import java.util.Date;
 public class TestDTO {
     String id;
     Date createTime;
-
     String name;
 }

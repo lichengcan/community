@@ -1,5 +1,6 @@
 package com.example.community.stream;
 
+import com.example.community.model.dto.TestDTO;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
