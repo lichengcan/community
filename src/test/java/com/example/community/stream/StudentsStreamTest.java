@@ -1,16 +1,14 @@
 package com.example.community.stream;
 
-import cn.hutool.core.bean.BeanUtil;
 import com.example.community.model.entity.Student;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
  * @author: lichengcan
  * @date: 2023-07-28 13:47
- * @description
+ * @description stream流练习
  **/
 public class StudentsStreamTest {
 
