@@ -35,12 +35,12 @@ public class TreeStreamTest {
 
     public static List<Tree> getRoot(List<Tree> trees) {
         List<Tree> roots = new ArrayList<>();
-        trees.stream()
-                .forEach(x -> {
-                    if (x.getParentId().equals("0")) {
-                        roots.add(x);
-                    }
-                });
+//        trees.stream().forEach(x -> {
+//                    if (x.getParentId().equals("0")) {
+//                        roots.add(x);
+//                    }
+//                });
+        trees.stream().filter(x->x.getParentId().equals("0")).forEach(roots::add);
         roots.stream().forEach(root -> buildTree(root, trees));
         return trees.stream().filter(tree -> tree.getParentId().equals("0")).collect(Collectors.toList());
     }
