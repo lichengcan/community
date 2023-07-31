@@ -19,6 +19,7 @@ public class TreeStreamTest {
         TreeList.add(new Tree("a", "0", "lcc"));
         TreeList.add(new Tree("b", "0", "bbb"));
         TreeList.add(new Tree("c", "0", "ccc"));
+        TreeList.add(new Tree("h", "g", "hhhhh"));
         TreeList.add(new Tree("d", "a", "ddd"));
         TreeList.add(new Tree("e", "b", "eee"));
         TreeList.add(new Tree("g", "e", "fff"));
@@ -29,7 +30,7 @@ public class TreeStreamTest {
         List<Tree> treeList = createTreeList();
 
         List<Tree> trees = getRoot(treeList);
-        System.out.println("treeList = " + treeList);
+        System.out.println("trees = " + trees);
     }
 
     public static List<Tree> getRoot(List<Tree> trees) {
