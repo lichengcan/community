@@ -1,23 +1,69 @@
 package com.example.community.排序算法;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.example.community.model.entity.ListNode;
+
+import java.util.*;
 
 class Solution {
 
     public static void main(String[] args) {
+
         //test1-删除每行中最大的值
         int[][] grid = new int[][]{{2, 1, 4}, {3, 3, 1}};
         final int i = deleteGreatestValue(grid);
-        System.out.println("i = " + i);
+//        System.out.println("i = " + i);
+
         //test2-和等于目标值的质数对
         final List<List<Integer>> primePairs = findPrimePairs(100);
-        System.out.println("primePairs = " + primePairs);
+//        System.out.println("primePairs = " + primePairs);
         final boolean prime = isPrime(95);
-        System.out.println("prime = " + prime);
+//        System.out.println("prime = " + prime);
+
+        //test3-相交链表
+//        给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
+        ListNode nodeSta = new ListNode(0);//创建首节点
+        ListNode nextNode;//声明一个变量用来在移动过程中指向当前节点
+        nextNode=nodeSta;//指向首节点
+        //创建链表
+        for (int h = 1; h <= 10; h++) {
+            ListNode node = new ListNode(h);
+            nextNode.next=node;
+            nextNode=nextNode.next;
+        }
+
+        nextNode=nodeSta;//重新赋值让它指向首节点
+        print(nextNode);
     }
+
+    static void print(ListNode listNoed){
+        //创建链表节点
+        while(listNoed!=null){
+            System.out.println("节点:"+listNoed.val);
+            listNoed=listNoed.next;
+        }
+        System.out.println();
+    }
+
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        //创建set集合
+        Set<ListNode> listNodes= new HashSet<>();
+        //将A放到temp中
+        ListNode temp = headA;
+        //temp放到set集合中
+        while (temp!=null){
+            listNodes.add(temp);
+            temp=temp.next;
+        }
+        temp = headB;
+        //遍历headB，判断set集合中是否包含B
+        while (temp != null) {
+            if (listNodes.contains(temp)) {
+                return temp;
+            }
+        }
+        return null;
+    }
+
 
     /**
      * 计算质数对
