@@ -1,4 +1,4 @@
-package com.example.community;
+package com.example.community.mongDB;
 
 import com.example.community.model.entity.User;
 import org.junit.jupiter.api.Test;
@@ -63,7 +63,7 @@ class MongDbApplicationTests {
                 new User(2, "今天吃什么", 77777, new Date()),
                 new User(3, "好饿", 12345, new Date())
         );
-        mongoTemplate.insert(users, User.class);
+//        mongoTemplate.insert(users, User.class);
     }
 
     /**

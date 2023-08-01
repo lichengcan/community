@@ -1,4 +1,4 @@
-package com.example.community;
+package com.example.community.redis;
 
 import com.example.community.util.RedisTemplateUtil;
 import org.junit.jupiter.api.Test;

@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.community.model.entity.Students;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 /**
  * @author: lichengcan
@@ -17,6 +16,5 @@ public interface StudentsService extends IService<Students> {
 
     void insert(Students students);
 
-    void deviceFlowTransSave(ConsumerRecord record);
 
 }

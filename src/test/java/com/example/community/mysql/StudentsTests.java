@@ -1,4 +1,4 @@
-package com.example.community;
+package com.example.community.mysql;
 
 import com.example.community.mapper.StudentsMapper;
 import com.example.community.model.entity.Students;

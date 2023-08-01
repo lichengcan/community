@@ -4,17 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.community.model.entity.Students;
 import com.example.community.mapper.StudentsMapper;
+import com.example.community.model.entity.Students;
 import com.example.community.service.StudentsService;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  * @author: lichengcan
  * @date: 2023-07-04 17:28
- * @description
+ * @description mybatis-plus测试
  **/
 @Service
 public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> implements StudentsService {
@@ -34,8 +33,5 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
         studentsMapper.insert(students);
     }
 
-    @Override
-    public void deviceFlowTransSave(ConsumerRecord record) {
-        System.out.println("消费成功record = " + record);
-    }
+
 }

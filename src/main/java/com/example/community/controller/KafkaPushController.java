@@ -12,9 +12,9 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * kafka信息管理
- *
- * @author zhengwen
+ * @author: lichengcan
+ * @date: 2023-07-04 17:26
+ * @description kafka信息管理
  **/
 @Slf4j
 @RestController

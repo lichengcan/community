@@ -4,19 +4,15 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.community.model.entity.Students;
-import com.example.community.mapper.StudentsMapper;
 import com.example.community.service.StudentsService;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
 /**
  * @author: lichengcan
  * @date: 2023-07-04 17:26
- * @description
+ * @description 测试mybatis-plus mongodb
  **/
 @RestController
 @RequestMapping("/students")
