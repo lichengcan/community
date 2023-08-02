@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * @author: lichengcan
  * @date: 2023-07-28 17:00
- * @description
+ * @description buildTree
  **/
 public class TreeStreamTest {
 
@@ -27,34 +27,33 @@ public class TreeStreamTest {
     }
 
     public static void main(String[] args) {
+        //初始化数据
         List<Tree> treeList = createTreeList();
-
+        //获取根节点
         List<Tree> trees = getRoot(treeList);
         System.out.println("trees = " + trees);
     }
 
     public static List<Tree> getRoot(List<Tree> trees) {
         List<Tree> roots = new ArrayList<>();
-//        trees.stream().forEach(x -> {
-//                    if (x.getParentId().equals("0")) {
-//                        roots.add(x);
-//                    }
-//                });
-        trees.stream().filter(x->x.getParentId().equals("0")).forEach(roots::add);
+        trees.stream().filter(x -> x.getParentId().equals("0")).forEach(roots::add);
+        //构建树形结构
         roots.stream().forEach(root -> buildTree(root, trees));
+        //只保留根节点对象
         return trees.stream().filter(tree -> tree.getParentId().equals("0")).collect(Collectors.toList());
     }
 
     public static void buildTree(Tree root, List<Tree> trees) {
-        for (Tree tree : trees) {
-            if (tree.getParentId().equals(root.getId())) {
-                if (root.getChild() == null) {
-                    root.setChild(new ArrayList<>());
-                }
-                root.getChild().add(tree);
-                //把当前节点和整个数组重新
-                buildTree(tree, trees);
-            }
-        }
+        trees.stream()
+                .forEach(tree -> {
+                    if (tree.getParentId().equals(root.getId())) {
+                        if (root.getChild() == null) {
+                            root.setChild(new ArrayList<>());
+                        }
+                        root.getChild().add(tree);
+                        //把当前节点和整个数组重新
+                        buildTree(tree, trees);
+                    }
+                });
     }
 }
