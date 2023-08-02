@@ -31,10 +31,11 @@ public class TreeStreamTest {
     public static void main(String[] args) {
         //初始化数据
         List<Tree> treeList = createTreeList();
-        buildTreeV2(treeList);
         //获取根节点
         List<Tree> trees = getRoot(treeList);
         System.out.println("trees = " + trees);
+        //构建树v2版本
+        buildTreeV2(treeList);
     }
 
     public static List<Tree> getRoot(List<Tree> trees) {
