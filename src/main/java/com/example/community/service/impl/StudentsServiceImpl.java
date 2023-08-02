@@ -10,6 +10,8 @@ import com.example.community.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: lichengcan
  * @date: 2023-07-04 17:28
@@ -31,6 +33,11 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     @Override
     public void insert(Students students) {
         studentsMapper.insert(students);
+    }
+
+    @Override
+    public List<Students> selectAll() {
+       return studentsMapper.selectAll();
     }
 
 

@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.community.model.entity.Students;
 
+import java.util.List;
+
 /**
  * @author: lichengcan
  * @date: 2023-07-04 17:27
@@ -17,4 +19,5 @@ public interface StudentsService extends IService<Students> {
     void insert(Students students);
 
 
+    List<Students> selectAll();
 }

@@ -5,9 +5,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.community.model.entity.Students;
 import com.example.community.service.StudentsService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author: lichengcan
@@ -57,10 +61,19 @@ public class StudentsController {
      */
     @PostMapping("addDocument")
     public void addDocument() {
-        Students user = new Students(123,"xiao",13,"123442131",2);
+        Students user = new Students(123, "xiao", 13, "123442131", 2,null);
         //_id存在时会把旧数据进行覆盖；
         mongoTemplate.save(user);
 //        _id存在时会提示主键重复的异常；
 //        mongoTemplate.insert(user);
+    }
+
+    @GetMapping("testSelectAll")
+    public PageInfo testSelectAll(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Students> students = studentsService.selectAll();
+        PageInfo pageInfo = new PageInfo(students);
+        pageInfo.setSize(students.size());
+        return pageInfo;
     }
 }

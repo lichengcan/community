@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @author lichengcan
@@ -14,18 +13,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("students")
-public class Students{
-    private Integer id;
-
-    private String name;
-
-    private Integer age;
-
-    private String tel;
-
-    private Integer grade;
-
-    List<Course> courseList;
+@TableName("course")
+public class Course {
+    private Integer c_id;
+    private String course;
+    private Integer stuId;
 
 }

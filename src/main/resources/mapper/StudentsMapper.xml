@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.mapper.StudentsMapper">
+    <resultMap id="BaseResult" type="com.example.community.model.entity.Students">
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="BIGINT" property="age"/>
+        <result column="tel" jdbcType="VARCHAR" property="tel"/>
+        <result column="grade" jdbcType="VARCHAR" property="grade"/>
+        <collection property="courseList" ofType="com.example.community.model.entity.Course">
+            <result column="id" jdbcType="INTEGER" property="c_id"/>
+            <result column="course" jdbcType="VARCHAR" property="course"/>
+            <result column="stu_id" jdbcType="INTEGER" property="stuId"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResult">
+        SELECT s.id,s.name,s.age,c.id as c_id,c.course,c.stu_id FROM  students s INNER JOIN `course` c on s.id = c.stu_id
+    </select>
+</mapper>
