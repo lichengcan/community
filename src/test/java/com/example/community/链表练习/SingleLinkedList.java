@@ -1,6 +1,6 @@
 package com.example.community.链表练习;
 
-public class LinkedList {
+public class SingleLinkedList {
 
     //表示头节点
     private Node head;
@@ -20,7 +20,7 @@ public class LinkedList {
         }
     }
 
-    public LinkedList() {
+    public SingleLinkedList() {
         head = null;
     }
 
@@ -99,7 +99,7 @@ public class LinkedList {
 
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        SingleLinkedList list = new SingleLinkedList();
         list.addNode(1);
         list.addNode(2);
         list.addNode(3);
