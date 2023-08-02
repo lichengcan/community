@@ -1,4 +1,4 @@
-package com.example.community.链表练习;
+package com.example.community.链表练习.单链表小程序;
 
 import java.util.Scanner;
 

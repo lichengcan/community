@@ -1,4 +1,4 @@
-package com.example.community.链表练习;
+package com.example.community.链表练习.单链表;
 
 public class SingleLinkedList {
 
