@@ -35,8 +35,7 @@ public class TreeStreamTest {
     }
 
     public static List<Tree> getRoot(List<Tree> trees) {
-        List<Tree> roots = new ArrayList<>();
-        trees.stream().filter(x -> x.getParentId().equals("0")).forEach(roots::add);
+        List<Tree> roots = trees.stream().filter(x -> x.getParentId().equals("0")).collect(Collectors.toList());
         //构建树形结构
         roots.stream().forEach(root -> buildTree(root, trees));
         //只保留根节点对象
