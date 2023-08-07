@@ -3,9 +3,9 @@ package com.example.community.十大排序算法;
 /**
  * @author: lichengcan
  * @date: 2023-08-07 15:04
- * @description
+ * @description 逐一比较相邻的元素，如果顺序不对就交换它们，重复该过程直到整个数组有序。
  **/
-public class 冒泡排序 {
+public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
 
