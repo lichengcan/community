@@ -28,29 +28,29 @@ public class QuickSort {
     }
 
     public static int partition(int[] array, int low, int high) {
-        //
+        //基准元素
         int pivot = array[high]; // 选择最右边的元素作为基准
-        //定义一个指针
-        int i = low - 1;
+        //定义一个指针 left
+        int left = low - 1;
 
         for (int j = low; j < high; j++) {
             //当前数和最后一个元素比较
             if (array[j] <= pivot) {
-                //指针右移
-                i++;
+                left++;
                 // 交换元素，将小于等于基准元素的元素放到基准元素的左侧
-                int temp = array[i];
-                array[i] = array[j];
+                int temp = array[left];
+                array[left] = array[j];
                 array[j] = temp;
+                //指针右移
             }
         }
 
         // 交换基准元素到正确的位置
-        int temp = array[i + 1];
-        array[i + 1] = array[high];
+        int temp = array[left + 1];
+        array[left + 1] = array[high];
         array[high] = temp;
 
-        return i + 1; // 返回基准元素的索引位置
+        return left + 1; // 返回基准元素的索引位置
     }
 
     public static void printArray(int[] array) {
