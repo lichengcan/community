@@ -3,7 +3,18 @@ package com.example.community.十大排序算法;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] array = {64, 34, 25, 12, 22, 11, 90};
+//        int[] array = {64, 34, 25, 12, 22, 11, 90};
+        int[] array = {64, 12,34, 25, 12, 22, 11, 90,111,2,7,1,88,33};
+        int[] array2 = {64, 12,34, 25, 12, 22, 11, 90,111,2,7,1,88,33};
+
+
+        System.out.println("原始数组：");
+        printArray(array2);
+
+        quickSort2(array2,0,array2.length-1);
+
+        System.out.println("\n排序后的数组：");
+        printArray(array2);
 
         System.out.println("原始数组：");
         printArray(array);
@@ -58,5 +69,32 @@ public class QuickSort {
             System.out.print(value + " ");
         }
         System.out.println();
+    }
+
+    public static void quickSort2(int[] a, int left, int right)
+    {
+        if(left>right)
+            return;
+        int pivot=a[left];//定义基准值为数组第一个数
+        int i=left;
+        int j=right;
+
+        while(i<j)
+        {
+            while(pivot<=a[j]&&i<j)//从右往左找比基准值小的数
+                j--;
+            while(pivot>=a[i]&&i<j)//从左往右找比基准值大的数
+                i++;
+//            if(i<j)                     //如果i<j，交换它们
+//            {
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+//            }
+        }
+        a[left]=a[i];
+        a[i]=pivot;//把基准值放到合适的位置
+        quickSort(a,left,i-1);//对左边的子数组进行快速排序
+        quickSort(a,i+1,right);//对右边的子数组进行快速排序
     }
 }
