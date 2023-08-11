@@ -1,5 +1,6 @@
 package com.example.community.exception;
 
+import java.io.*;
 import java.util.Scanner;
 
 /**
