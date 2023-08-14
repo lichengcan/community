@@ -85,12 +85,12 @@ public class QuickSort {
                 j--;
             while(pivot>=a[i]&&i<j)//从左往右找比基准值大的数
                 i++;
-//            if(i<j)                     //如果i<j，交换它们
-//            {
+            if(i<j)                     //如果i<j，交换它们
+            {
                 int temp=a[i];
                 a[i]=a[j];
                 a[j]=temp;
-//            }
+            }
         }
         a[left]=a[i];
         a[i]=pivot;//把基准值放到合适的位置
