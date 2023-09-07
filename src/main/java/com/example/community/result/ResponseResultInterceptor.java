@@ -29,11 +29,10 @@ public class ResponseResultInterceptor implements HandlerInterceptor {
      * @param handler  控制器方法
      *
      * @return Boolean
-     * @throws Exception
      */
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         if (handler instanceof HandlerMethod) {
             final HandlerMethod handlerMethod = (HandlerMethod) handler;
             final Class<?> clazz = handlerMethod.getBeanType();
