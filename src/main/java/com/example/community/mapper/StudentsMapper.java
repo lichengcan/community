@@ -1,6 +1,7 @@
 package com.example.community.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.community.model.dto.StudentsCourseDTO;
 import com.example.community.model.entity.Students;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
  */
 public interface StudentsMapper extends BaseMapper<Students> {
 
-    List<Students> selectAll();
+    List<StudentsCourseDTO> selectAll();
 }

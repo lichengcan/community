@@ -1,9 +1,9 @@
-package com.example.community.model.entity;
+package com.example.community.model.dto;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.community.model.entity.Course;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,8 +14,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("students")
-public class Students{
+public class StudentsCourseDTO {
     private Integer id;
 
     private String name;
@@ -26,5 +25,6 @@ public class Students{
 
     private Integer grade;
 
+    List<Course> courseList;
 
 }

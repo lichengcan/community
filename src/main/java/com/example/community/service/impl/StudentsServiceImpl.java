@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.community.mapper.StudentsMapper;
+import com.example.community.model.dto.StudentsCourseDTO;
 import com.example.community.model.entity.Students;
 import com.example.community.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,7 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
 
     @Override
     public IPage<Students> selectPage(Page<Students> page, QueryWrapper<Students> eq) {
-        return studentsMapper.selectPage(page, new QueryWrapper<Students>()
-                .eq("name", "name_a2frd"));
+        return studentsMapper.selectPage(page, eq);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class StudentsServiceImpl extends ServiceImpl<StudentsMapper, Students> i
     }
 
     @Override
-    public List<Students> selectAll() {
+    public List<StudentsCourseDTO> selectAll() {
        return studentsMapper.selectAll();
     }
 

@@ -1,5 +1,6 @@
 package com.example.community.controller;
 
+import com.example.community.result.ResponseResult;
 import com.example.community.service.impl.StudentsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -16,6 +17,7 @@ import static java.lang.Thread.sleep;
  * @description
  **/
 @RestController
+@ResponseResult
 @RequestMapping("/async")
 public class TestAsync {
 
@@ -25,7 +27,7 @@ public class TestAsync {
 
     @GetMapping("/test")
     public Object test() throws InterruptedException {
-//        testAsync2.test1();
+        testAsync2.test1();
         return "123";
     }
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.community.model.dto.StudentsCourseDTO;
 import com.example.community.model.entity.Students;
 
 import java.util.List;
@@ -19,5 +20,5 @@ public interface StudentsService extends IService<Students> {
     void insert(Students students);
 
 
-    List<Students> selectAll();
+    List<StudentsCourseDTO> selectAll();
 }

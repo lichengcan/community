@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.community.mapper.StudentsMapper">
-    <resultMap id="BaseResult" type="com.example.community.model.entity.Students">
+    <resultMap id="BaseResult" type="com.example.community.model.dto.StudentsCourseDTO">
         <result column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="age" jdbcType="BIGINT" property="age"/>

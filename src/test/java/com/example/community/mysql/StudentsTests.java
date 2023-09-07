@@ -1,6 +1,7 @@
 package com.example.community.mysql;
 
 import com.example.community.mapper.StudentsMapper;
+import com.example.community.model.dto.StudentsCourseDTO;
 import com.example.community.model.entity.Students;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -33,7 +34,7 @@ class StudentsTests {
     @Test
     public PageInfo testSelectAll(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<Students> students = studentsMapper.selectAll();
+        List<StudentsCourseDTO> students = studentsMapper.selectAll();
         PageInfo pageInfo = new PageInfo(students);
         pageInfo.setSize(students.size());
         return pageInfo;

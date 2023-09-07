@@ -3,7 +3,9 @@ package com.example.community.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.community.model.dto.StudentsCourseDTO;
 import com.example.community.model.entity.Students;
+import com.example.community.result.ResponseResult;
 import com.example.community.service.StudentsService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -19,6 +21,7 @@ import java.util.List;
  * @description 测试mybatis-plus mongodb
  **/
 @RestController
+@ResponseResult
 @RequestMapping("/students")
 public class StudentsController {
 
@@ -40,7 +43,7 @@ public class StudentsController {
     public IPage<Students> testPage() {
         Page<Students> page = new Page<>(1, 2);
         IPage<Students> userIPage = studentsService.selectPage(page, new QueryWrapper<Students>()
-                .eq("name", "name_a2frd"));
+                .eq("name", "xiaoli"));
         return userIPage;
     }
 
@@ -61,7 +64,7 @@ public class StudentsController {
      */
     @PostMapping("addDocument")
     public void addDocument() {
-        Students user = new Students(123, "xiao", 13, "123442131", 2,null);
+        Students user = new Students(123, "xiao", 13, "123442131", 2);
         //_id存在时会把旧数据进行覆盖；
         mongoTemplate.save(user);
 //        _id存在时会提示主键重复的异常；
@@ -71,7 +74,7 @@ public class StudentsController {
     @GetMapping("testSelectAll")
     public PageInfo testSelectAll(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<Students> students = studentsService.selectAll();
+        List<StudentsCourseDTO> students = studentsService.selectAll();
         PageInfo pageInfo = new PageInfo(students);
         pageInfo.setSize(students.size());
         return pageInfo;
